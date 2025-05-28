@@ -1,4 +1,7 @@
+"use client";
 import React from "react";
+import { useThemeMode } from "@/context/ThemeMode";
+import returnLogo from "@/actions/returnLogo";
 
 const LeftHeader = () => {
   return (
@@ -6,8 +9,8 @@ const LeftHeader = () => {
       <ul>
         <li>
           <img
-            src="/images/logo/logo.png"
-            className="w-11 h-11 bg-transparent"
+            src={'/images/logo/logo.png'}
+            className="w-11 h-11 bg-transparent dark:mix-blend-color text-white"
             alt=""
           />
         </li>
