@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import { Loader2,Loader } from "lucide-react";
 import { FaGoogle } from "react-icons/fa";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
@@ -31,13 +31,13 @@ export default function PasswordContainer({
         </div>
       </div>
       <div className="mt-12">
-        <p className="font-bold">Password</p>
-        <Input className="mt-1" type="password" placeholder="Password" />
-        <div className="flex justify-end mt-4">
-          <Button onClick={() => setLoading(true)}>
+        <p className="text-xs">Password</p>
+        <Input className="mt-1  h-8 focus:border-blue-300 outline-blue-700" type="password" placeholder="Password" />
+        <div className="flex justify-end mt-7">
+          <Button onClick={() => setLoading(true)} className="bg-blue-500 rounded-full pt-[6px] px-5 text-[14px] dark:text-white hover:bg-blue-700">
             {loading ? (
               <>
-                <Loader2 className="animate-spin outline-none" />
+                <Loader className=" outline-none animate-spin" />
                 Please wait
               </>
             ) : (

@@ -26,7 +26,9 @@ const barlow = Barlow_Condensed({
 export default function Home() {
   return (
     <div className="flex justify-between items-center">
-      <div></div>
+      <div>
+        
+      </div>
       <div className="px-52 py-16">
         <h1
           className={`text-8xl font-bold text-center text-color_text_11 dark:delay-300 dark:text-gray-100 ${roboto.className}`}

@@ -8,7 +8,7 @@ import {
 import { FaMoon } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { useThemeMode } from "@/context/ThemeMode";
-import Link from "next/link"; 
+import Link from "next/link";
 
 const RightHeader = () => {
   const { ThemeMode } = useThemeMode();
@@ -27,12 +27,14 @@ const RightHeader = () => {
         <IoNotificationsSharp />
       </li>
       <li>
-        <Button
-          variant={"outline"}
-          className="bg-white outline-none shadow-none text-black rounded-full pt-[5px] px-7"
-        >
-          sign up
-        </Button>
+        <Link href={"/register"}>
+          <Button
+            variant={"outline"}
+            className="bg-white outline-none shadow-none text-black rounded-full pt-[5px] px-7"
+          >
+            sign up
+          </Button>
+        </Link>
       </li>
       <li>
         <Link href={"/login"}>
