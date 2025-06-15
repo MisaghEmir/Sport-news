@@ -4,7 +4,7 @@ import RightHeader from './Right-Header'
 
 export default function Header() {
   return (
-    <div className="bg-white dark:bg-opacity-5 flex justify-between items-center px-6 py-1">
+    <div className="bg-white dark:bg-opacity-5 flex justify-between sticky top-0 items-center px-6 py-1">
       <LeftHeader />
       <RightHeader />
     </div>

@@ -4,7 +4,6 @@ import "./globals.css";
 import "./env.css"
 import { ThemeProvider } from "@/context/ThemeMode";
 import Theme from "@/config/Theme";
-import Footer from "@/components/layout/Footer";
 import { Suspense } from "react";
 import Loading from "@/config/Loading";
 
@@ -33,7 +32,6 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider>
           <Suspense fallback={<Loading />}>{children}</Suspense>
-          <Footer />
           <Theme />
         </ThemeProvider>
       </body>

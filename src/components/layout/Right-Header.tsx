@@ -27,19 +27,19 @@ const RightHeader = () => {
         <IoNotificationsSharp />
       </li>
       <li>
+        <Link href={"/login"}>
+          <Button className="bg-blue-700 rounded-full pt-[5px] px-7 dark:text-white hover:bg-blue-900">
+            Start Free Trial
+          </Button>
+        </Link>
+      </li>
+      <li>
         <Link href={"/register"}>
           <Button
             variant={"outline"}
             className="bg-white outline-none shadow-none text-black rounded-full pt-[5px] px-7"
           >
-            sign up
-          </Button>
-        </Link>
-      </li>
-      <li>
-        <Link href={"/login"}>
-          <Button className="bg-blue-700 rounded-full pt-[5px] px-7 dark:text-white hover:bg-blue-900">
-            sigin in
+            sign in
           </Button>
         </Link>
       </li>

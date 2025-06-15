@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
+import Headermatch from "../matches/Header-match";
 
 const frameworks = [
   {
@@ -60,20 +61,20 @@ export default function HeaderMatches() {
               variant="outline"
               role="combobox"
               aria-expanded={open}
-              className="w-[200px] justify-between "
+              className="w-[200px] justify-between dark:text-color_text_30"
             >
               {value
                 ? frameworks.find((framework) => framework.value === value)
                     ?.label
                 : "Select framework..."}
-              <ChevronsUpDown className="opacity-50 dark:bg-black" />
+              <ChevronsUpDown className="opacity-50 " />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-[200px] p-0 dark:bg-black">
             <Command className="dark:bg-black">
               <CommandInput
                 placeholder="Search framework..."
-                className="h-9 dark:bg-black"
+                className="h-9 dark:bg-black dark:text-w\"
               />
               <CommandList className="dark:bg-black">
                 <CommandEmpty>No framework found.</CommandEmpty>
@@ -96,10 +97,10 @@ export default function HeaderMatches() {
                       {framework.label}
                       <Check
                         className={cn(
-                          "ml-auto dark:bg-black",
+                          "ml-auto ",
                           value === framework.value
-                            ? "opacity-100 bg-black"
-                            : "opacity-0 bg-black"
+                            ? "opacity-100 "
+                            : "opacity-0 "
                         )}
                       />
                     </CommandItem>
@@ -110,22 +111,28 @@ export default function HeaderMatches() {
           </PopoverContent>
         </Popover>
       </div>
-      <div className="px-10 pr-5    w-full" >
+      <div className="px-10 pr-5    w-full">
         <Carousel className="w-full ">
           <CarouselContent className="">
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem key={index} className="border-color_border_50 m-0">
-                <Card className="h-16 bg-transparent border-t-0 border-b-0 m-0 rounded-none shadow-none border-l w-full">
-                  <CardContent className="flex aspect-square items-center justify-center h-full">
-                    <span className=" font-semibold">{index + 1}</span>
-                  </CardContent>
-                </Card>
+                <div className="flex pl-4 gap-7">
+                  <Headermatch />
+                  <Headermatch />
+                  <Headermatch />
+                  <Headermatch />
+                  <Headermatch />
+                  <Headermatch />
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
           <CarouselPrevious className="left-[-20px] border-none border-l rounded-none text-xs p-0 w-5 h-7 bg-blue-700 hover:bg-blue-900 hover:text-white text-white rounded-s-md" />
           <div className="border-l h-full bg-black">
-            <CarouselNext className="m-0 right-[-20px] border-none border-l rounded-none text-xs p-0 w-5 h-7 bg-blue-700 hover:bg-blue-900 hover:text-white text-white rounded-e-md" size={'sm'} />
+            <CarouselNext
+              className="m-0 right-[190px] border-none border-l rounded-none text-xs p-0 w-5 h-7 bg-blue-700 hover:bg-blue-900 hover:text-white text-white rounded-e-md"
+              size={"sm"}
+            />
           </div>
         </Carousel>
       </div>

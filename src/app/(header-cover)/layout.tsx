@@ -1,7 +1,6 @@
-import HeaderMatches from "@/components/layout/Header-Matches";
-import Header from "@/components/layout/Header";
+import HeaderImage from "@/components/layout/header-image/Header-Image";
 import "../globals.css";
-import "../env.css"
+import "../env.css";
 import Footer from "@/components/layout/Footer";
 
 export default function RootLayout({
@@ -11,10 +10,9 @@ export default function RootLayout({
 }>) {
   return (
     <>
-    <HeaderMatches />
-    <Header />
-    {children}
-    <Footer />
+      <HeaderImage />
+      {children}
+      <Footer />
     </>
   );
 }

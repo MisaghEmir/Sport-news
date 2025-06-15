@@ -9,9 +9,8 @@ import {
   Barlow_Condensed,
 } from "next/font/google";
 import "../globals.css";
-import "../env.css"
+import "../env.css";
 import Link from "next/link";
-
 
 const roboto = DM_Serif_Display({
   weight: "400",
@@ -25,13 +24,26 @@ const barlow = Barlow_Condensed({
 
 export default function Home() {
   return (
-    <div className="flex justify-between items-center">
-      <div>
-        
+    <div className="flex justify-between ">
+      <div className="flex flex-col relative h-full">
+        <div className=" absolute left-[-80px] top-28 w-44 h-36 rounded-none ">
+          <img
+            src="/images/random/random4.webp"
+            className="w-full h-full rounded-none opacity-70"
+            alt=""
+          />
+        </div>
+        <div className=" absolute left-[-30px] top-72 w-44 h-44 rounded-none">
+          <img
+            src="/images/random/random3.webp"
+            className="w-full h-full rounded-none opacity-70"
+            alt=""
+          />
+        </div>
       </div>
-      <div className="px-52 py-16">
+      <div className="px-52 py-16 pt-12">
         <h1
-          className={`text-8xl font-bold text-center text-color_text_11 dark:delay-300 dark:text-gray-100 ${roboto.className}`}
+          className={`text-8xl font-bold text-center dark:delay-300 text-color_text_11 dark:text-color_text_29 ${roboto.className}`}
         >
           <span>Live the Game</span>
           <br />
@@ -39,26 +51,46 @@ export default function Home() {
           <br />
           <span>Stay Ahead</span>
         </h1>
-        <p className={`text-center text-xl px-32 mt-12 text-gray-900 dark:text-slate-600 bg-color_bg_14 ${barlow.className}`}>
+        <p
+          className={`text-center text-xl px-32 mt-12 text-color_text_20  ${barlow.className}`}
+        >
           A comprehensive platform to help hirers and creators navigate the
           creative world from discovering inspiration, to connecting with one
           another
         </p>
         <div className="flex justify-center gap-3 mt-4">
-          <Link href={'/login'}>
-          <Button className="bg-blue-700 rounded-full px-7 pt-[6px] dark:text-white hover:bg-blue-900">
-            Start Betting
-          </Button>
+          <Link href={"/login"}>
+            <Button className="bg-blue-700 rounded-full px-7 pt-[6px] dark:text-white hover:bg-blue-900">
+              Start Betting
+            </Button>
           </Link>
-          <Button
-            variant={"outline"}
-            className="dark:text-white bg-none outline-none shadow-none text-black rounded-full pt-[6px] px-7"
-          >
-            View Matches
-          </Button>
+          <Link href={"/matches"}>
+            <Button
+              variant={"outline"}
+              className="dark:text-white bg-none outline-none shadow-none text-black rounded-full pt-[6px] px-7"
+            >
+              View Matches
+            </Button>
+          </Link>
         </div>
       </div>
-      <div></div>
+      <div className="flex flex-col relative h-full">
+        <div className=" absolute right-[-30px] top-28 w-44 h-28 rounded-none ">
+          <img
+            src="/images/random/random4.webp"
+            className="w-full h-full rounded-none opacity-70"
+            alt=""
+          />
+        </div>
+       
+        <div className=" absolute right-[-60px] top-72 w-44 h-44 rounded-none">
+          <img
+            src="/images/random/random3.webp"
+            className="w-full h-full rounded-none opacity-70"
+            alt=""
+          />
+        </div>
+      </div>
     </div>
   );
 }
