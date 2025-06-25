@@ -15,10 +15,10 @@ export default function EmailContainer({
 }) {
   const [loading, setLoading] = useState(false);
   return (
-    <div className="flex flex-col justify-between bg-white rounded-md p-[7vh] px-20">
+    <div className="flex flex-col justify-between bg-white dark:bg-background_body_dark dark:text-color_text_29 rounded-md p-[7vh] px-20">
       <div>
         <h1 className="md:text-2xl font-bold">Sign in</h1>
-        <p className="text-sm mt-2">
+        <p className="text-sm mt-2 text-color_text_13 dark:text-color_text_26">
           New user?
           <Link href={"/register"}>
             <span className="text-blue-500"> Create an account</span>
@@ -26,8 +26,8 @@ export default function EmailContainer({
         </p>
       </div>
       <div className="mt-[7vh]">
-        <p className="text-xs ">Email address</p>
-        <Input className="mt-1  h-8" type="email" placeholder="Email" />
+        <p className="text-xs text-color_text_13 dark:text-color_text_26">Email address</p>
+        <Input className="mt-1 text-color_text_13 dark:text-color_text_26 h-8" type="email" placeholder="Email" />
         <div className="flex justify-end mt-[4vh]">
           <Button
             onClick={handleCheckEmail}
@@ -45,19 +45,19 @@ export default function EmailContainer({
         </div>
       </div>
       <div className=" relative mt-[4vh] flex justify-center">
-        <span className="top-[-13px] px-2 bg-white absolute">Or</span>
+        <span className="top-[-13px] px-2 bg-white dark:bg-background_body_dark absolute">Or</span>
       </div>
       <hr />
       <div className="flex flex-col gap-2 mt-6">
-        <Button variant={"outline"} className="p-6 rounded-3xl ">
+        <Button variant={"outline"} className="p-6 rounded-3xl dark:bg-color_bg_13">
           <img src="/images/logo/google-social-icon-round.svg" alt="" />
           <span className="text-xs mx-1">Continue with google</span>
         </Button>
-        <Button variant={"outline"} className="p-6 rounded-3xl ">
+        <Button variant={"outline"} className="p-6 rounded-3xl dark:bg-color_bg_13">
           <img src="/images/logo/facebook-social-icon-round.svg" alt="" />
           <span className="text-xs mx-1">Continue with google</span>
         </Button>
-        <Button variant={"outline"} className="p-6 rounded-3xl ">
+        <Button variant={"outline"} className="p-6 rounded-3xl dark:bg-color_bg_13">
           <img src="/images/logo/microsoft-social-icon-round.svg" alt="" />
           <span className="text-xs mx-1">Continue with google</span>
         </Button>

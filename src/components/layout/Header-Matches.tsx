@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
-import Headermatch from "../matches/Header-match";
+import Headermatch from "../football/matches/Header-match";
 
 const frameworks = [
   {

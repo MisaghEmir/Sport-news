@@ -22,7 +22,7 @@ export default function HeaderImage() {
     };
   }, []);
   return (
-    <div className={`${scrollY ? 'bg-background text-color_text_10 dark:text-color_text_30' : 'bg-none text-color_text_30'} delay-100 border-b z-50 fixed w-full dark:bg-opacity-5 flex justify-between items-center px-6 py-1`}>
+    <div className={`${scrollY ? 'bg-background text-color_text_10 dark:text-color_text_30 dark:bg-background_body_dark' : 'bg-none text-color_text_30'} delay-100 border-b z-50 fixed w-full dark:bg-opacity-5 flex justify-between items-center px-6 py-1`}>
       <Left />
       <Right />
     </div>

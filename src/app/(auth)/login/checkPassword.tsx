@@ -13,7 +13,7 @@ export default function PasswordContainer({
 }) {
   const [loading, setLoading] = useState(false);
   return (
-    <div className="flex flex-col justify-between bg-white rounded-md p-10 px-20">
+    <div className="flex flex-col justify-between bg-white dark:bg-background_body_dark dark:text-color_text_29 rounded-md p-10 px-20">
       <div className="flex items-center gap-3">
         <span className="pt-1 cursor-pointer" onClick={handleCheckEmail}>
           <FaArrowLeft />
@@ -31,8 +31,8 @@ export default function PasswordContainer({
         </div>
       </div>
       <div className="mt-12">
-        <p className="text-xs">Password</p>
-        <Input className="mt-1  h-8 focus:border-blue-300 outline-blue-700" type="password" placeholder="Password" />
+        <p className="text-xs text-color_text_13 dark:text-color_text_26">Password</p>
+        <Input className="mt-1 text-color_text_13 dark:text-color_text_26 h-8 focus:border-blue-300 outline-blue-700" type="password" placeholder="Password" />
         <div className="flex justify-end mt-7">
           <Button onClick={() => setLoading(true)} className="bg-blue-500 rounded-full pt-[6px] px-5 text-[14px] dark:text-white hover:bg-blue-700">
             {loading ? (

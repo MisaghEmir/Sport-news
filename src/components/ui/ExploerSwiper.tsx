@@ -151,7 +151,7 @@ function ExploreSwiper() {
               <div
                 className={`w-full h-full ${
                   index === 3
-                    ? "bg-theme_200 opacity-100"
+                    ? "bg-blue-600 opacity-100"
                     : " bg-black dark:bg-white opacity-75"
                 }
                  z-10 k${index} top-0 left-0 absolute text-white dark:text-black font-SourceSansProBold font-bold flex items-center justify-center text-3xl`}
@@ -164,7 +164,7 @@ function ExploreSwiper() {
       </div>
       <div className="w-32 absolute left-0 cursor-pointer top-0 flex items-center h-full z-10 bg-gradient-to-l from-transparent to-white dark:to-black">
         <span
-          className="text-2xl font-bold ml-5 text-black bg-white dark:text-white dark:bg-black rounded-full p-2 shadow-2xl shadow-black"
+          className="text-2xl font-bold ml-5 text-black bg-white dark:text-white hover:bg-blue-600 hover:text-color_text_30 delay-200 transition-all dark:bg-black rounded-full p-2 shadow-2xl shadow-black"
           onClick={prevSlide}
         >
           <IoIosArrowBack />
@@ -172,7 +172,7 @@ function ExploreSwiper() {
       </div>
       <div className="w-40 absolute right-0 cursor-pointer top-0 flex items-center justify-end bg-gradient-to-r from-transparent to-white dark:to-black h-full z-10">
         <span
-          className="text-2xl font-bold text- mr-3 opacity-100 bg-white dark:text-white dark:bg-black rounded-full p-2 shadow-2xl shadow-black"
+          className="text-2xl font-bold text- mr-3 opacity-100 bg-white hover:bg-blue-600 hover:text-color_text_30 delay-200 transition-all dark:text-white dark:bg-black rounded-full p-2 shadow-2xl shadow-black"
           onClick={nextSlide}
         >
           <IoIosArrowForward />

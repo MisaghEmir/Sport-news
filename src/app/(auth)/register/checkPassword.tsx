@@ -14,23 +14,23 @@ const PasswordContainer = ({
 }) => {
   const [loading, setLoading] = useState(false);
   return (
-    <div className="flex flex-col justify-between bg-white rounded-md p-10 pb-16 px-20">
+    <div className="flex flex-col justify-between bg-white dark:bg-background_body_dark dark:text-color_text_29 rounded-md p-10 pb-16 px-20">
       <div>
-        <p className="text-xs">Step 2 of 2</p>
+        <p className="text-xs text-color_text_13 dark:text-color_text_26">Step 2 of 2</p>
         <div className="flex items-center gap-3">
           <span className="pt-3   cursor-pointer" onClick={handleCheckEmail}>
             <FaArrowLeft />
           </span>
           <h1 className="md:text-3xl font-bold mt-2">Create an account</h1>
         </div>
-        <p className="mt-2 text-[15px] text-gray-600">
+        <p className="mt-2 text-[15px] text-color_text_13 dark:text-color_text_26">
           Alerady have an account?
           <Link href={"/login"}>
             <span className="text-blue-500"> Sign in</span>
           </Link>
         </p>
       </div>
-      <div className="flex flex-col text-gray-700">
+      <div className="flex flex-col text-color_text_13 dark:text-color_text_26">
         <div className="flex gap-5 mt-7">
           <div className="flex-1">
             <p className="text-xs">First name</p>
