@@ -25,6 +25,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import Headermatch from "../football/matches/Header-match";
+import Link from "next/link";
 
 const frameworks = [
   {
@@ -117,7 +118,9 @@ export default function HeaderMatches() {
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem key={index} className="border-color_border_50 m-0">
                 <div className="flex pl-4 gap-7">
-                  <Headermatch />
+                  <Link href={"/football/match/3"}>
+                    <Headermatch />
+                  </Link>
                   <Headermatch />
                   <Headermatch />
                   <Headermatch />

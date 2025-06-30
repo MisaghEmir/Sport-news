@@ -7,7 +7,7 @@ export default function page() {
     <div>
       <Header />
 
-      <div className="px-28 mt-20">
+      <div className="px-24 mt-20">
        <NewsContainer />
       </div>
     </div>

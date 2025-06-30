@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import "./env.css"
+import "./env.css";
 import { ThemeProvider } from "@/context/ThemeMode";
 import Theme from "@/config/Theme";
 import { Suspense } from "react";
 import Loading from "@/config/Loading";
+import ProviderRedux from "@/redux/Provider";
+import ScrollHandle from "@/redux/ScrollHandle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,10 +32,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} pb-28`}>
-        <ThemeProvider>
-          <Suspense fallback={<Loading />}>{children}</Suspense>
-          <Theme />
-        </ThemeProvider>
+        <ProviderRedux>
+          <ThemeProvider>
+            <ScrollHandle />
+            <Suspense fallback={<Loading />}>{children}</Suspense>
+            <Theme />
+          </ThemeProvider>
+        </ProviderRedux>
       </body>
     </html>
   );

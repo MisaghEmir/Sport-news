@@ -8,6 +8,8 @@ import "../globals.css";
 import "../env.css";
 import Link from "next/link";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import HomeLabel from "@/components/ui/homeLabel";
 
 const roboto = DM_Serif_Display({
   weight: "400",
@@ -20,21 +22,7 @@ const barlow = Barlow_Condensed({
 });
 
 export default function Home() {
-  // useEffect(() => {
-  //   gsap.to(".title", 0.0, { opacity: 0 });
-  //   gsap.to(".title", 0.4, { y: 60 });
 
-  //   setTimeout(() => {
-  //     gsap.to(".title", 0.4, { y: 0, opacity: 1 });
-  //   }, 200);
-  // }, []);
-   window.onscroll = function () {
-    if (window.pageYOffset > 1) {
-      console.log(true);
-    } else {
-      console.log(false);
-    }
-  };
   return (
     <div>
       <div className="flex justify-between ">
@@ -173,6 +161,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <HomeLabel />
     </div>
   );
 }

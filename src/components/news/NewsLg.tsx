@@ -2,7 +2,7 @@ import React from 'react'
 
 const NewsLg = () => {
   return (
-    <div>
+    <div className=''>
       <div>
         <img src="/images/test/1.avif" className="w-full rounded-md" alt="" />
       </div>

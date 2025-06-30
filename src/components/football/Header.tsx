@@ -40,6 +40,12 @@ export default function Header() {
           >
             Bundesliga
           </Link>
+          <Link
+            href="/football/league/3"
+            className="hover:border-theme_border_100 border-b-4 border-transparent px-2 pb-1"
+          >
+            Laliga
+          </Link>
         
         </div>
         <div className="hover:border-theme_border_100 border-b-4 border-transparent px-2 pt-2 pb-1">
