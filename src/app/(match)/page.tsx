@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import HomeLabel from "@/components/ui/homeLabel";
+import { gsap } from "gsap/gsap-core";
 
 const roboto = DM_Serif_Display({
   weight: "400",
@@ -22,11 +23,25 @@ const barlow = Barlow_Condensed({
 });
 
 export default function Home() {
+   useEffect(() => {
+      gsap.to(".right", 0.0, { opacity: 0 });
+      gsap.to(".right", 0.4, { x: 60 });
+      gsap.to(".left", 0.0, { opacity: 0 });
+      gsap.to(".left", 0.4, { x: -60 });
+      gsap.to(".title", 0.0, { opacity: 0 });
+      gsap.to(".title", 0.4, { y: 60 });
+  
+      setTimeout(() => {
+        gsap.to(".right", 0.4, { x: 0, opacity: 1 });
+        gsap.to(".left", 0.4, { x: 0, opacity: 1 });
+        gsap.to(".title", 0.4, { y: 0, opacity: 1 });
+      }, 200);
+    }, []);
 
   return (
     <div>
       <div className="flex justify-between ">
-        <div className="flex flex-col relative h-full">
+        <div className="flex left flex-col relative h-full">
           <div className=" absolute left-[-80px] top-28 w-44 h-36 rounded-none ">
             <img
               src="/images/random/random4.webp"
@@ -75,7 +90,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col relative h-full">
+        <div className="flex flex-col right relative h-full">
           <div className=" absolute right-[-30px] top-28 w-44 h-28 rounded-none ">
             <img
               src="/images/random/random4.webp"

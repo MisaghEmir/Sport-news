@@ -4,7 +4,7 @@ const Navigation = ({ title, image }: { title: string; image: string }) => {
   return (
     <div>
       <div className="bg-color_bg_00 opacity-70 text-white">
-        <div className="flex justify-between pl-7 md:pl-32 border-b border-color_border_70">
+        <div className="flex justify-between pl-7 md:pl-28 border-b border-color_border_70">
           <div className="flex items-end py-5">
             <div>
               <img src={image} className="h-[4.7rem]" alt="" />
@@ -16,11 +16,11 @@ const Navigation = ({ title, image }: { title: string; image: string }) => {
           </div>
           <div className="flex justify-end "></div>
         </div>
-        <div className="flex justify-between px-10 md:px-32 pr-24 pt-3">
+        <div className="flex justify-between px-10 md:px-28 pt-3">
           <div className="flex  sticky top-0 gap-8 font-bold text-sm">
             <Link
               href="./"
-              className="border-theme_border_100 border-b-4 border-transparent px-2 pb-1 footballnav"
+              className="border-theme_border_100 border-b-4 border-transparent px-2 pb-1 footballnav "
             >
               Latest news
             </Link>

@@ -9,6 +9,7 @@ import Loading from "@/config/Loading";
 import ProviderRedux from "@/redux/Provider";
 import ScrollHandle from "@/redux/ScrollHandle";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

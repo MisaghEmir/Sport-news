@@ -14,7 +14,7 @@ export default function Header() {
           <img src={"http://localhost:8080/image/football/football.png"} className="h-20" alt="" />
         </div>
       </div>
-      <div className="flex justify-between px-28 pr-28 pt-3">
+      <div className="flex justify-between px-28  pt-3">
         <div className="flex  sticky top-0 gap-8 text-sm font-bold">
           <Link
             href="/football"
