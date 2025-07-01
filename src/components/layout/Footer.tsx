@@ -15,11 +15,11 @@ export default function Footer() {
           <div className="flex justify-center px-7 border-l border-color_border_60 dark:delay-300">
             Try Victory City Pro
           </div>
-          <div className="flex justify-center px-7 border-l border-color_border_60 dark:delay-300">
+          <div className="hidden md:flex justify-center px-7 border-l border-color_border_60 dark:delay-300">
             More Victory City
           </div>
         </div>
-        <div className="flex gap-5">
+        <div className="md:flex gap-5 hidden">
           <div>TOU</div>
           <div>Privacy</div>
           <div>Community</div>

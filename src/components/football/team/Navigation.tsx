@@ -19,19 +19,19 @@ const Navigation = ({ title, image }: { title: string; image: string }) => {
         <div className="flex justify-between px-10 md:px-28 pt-3">
           <div className="flex  sticky top-0 gap-8 font-bold text-sm">
             <Link
-              href="./"
+              href="./2/news"
               className="border-theme_border_100 border-b-4 border-transparent px-2 pb-1 footballnav "
             >
               Latest news
             </Link>
             <Link
-              href="/football"
+              href="./"
               className="border-theme_border_100 border-b-4 border-transparent px-2 pb-1 footballnav"
             >
               Club info
             </Link>
             <Link
-              href="./squad"
+              href="./2/squad"
               className="hover:border-theme_border_100 border-b-4 border-transparent px-2 pb-1"
             >
               Squad

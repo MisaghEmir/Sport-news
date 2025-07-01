@@ -46,7 +46,7 @@ const Streak = () => {
       </div>
       <div className="mt-3">
         <p className="mt-3">Streak of the last 10 matches:</p>
-        <div className="flex gap-1 mt-1 text-lg font-bold">
+        <div className="hidden md:flex gap-1 mt-1 text-lg font-bold w-full overflow-hidden">
           <div className="col-span-1 py-3 px-[1.1rem] text-orange-500 bg-white dark:bg-black">
             V
           </div>

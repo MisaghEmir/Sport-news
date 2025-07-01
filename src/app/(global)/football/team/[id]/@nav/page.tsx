@@ -1,4 +1,5 @@
 import MatchContainer from "@/components/football/matches/MatchContainer";
+import History from "@/components/football/team/History";
 import PlayerCard from "@/components/football/team/PlayerCard";
 import Result from "@/components/football/team/Result";
 import Streak from "@/components/football/team/Streak";
@@ -35,6 +36,12 @@ export default function page() {
           <PlayerCard />
           <PlayerCard />
         </div>
+      </div>
+      <div className="mt-12">
+          <TitrLabel label={"History"} />
+          <div>
+            <History />
+          </div>
       </div>
     </div>
   );
