@@ -15,7 +15,9 @@ const RightHeader = () => {
   return (
     <ul className="flex items-center gap-3 text-lg dark:text-gray-50">
       <li className=" cursor-pointer dark:delay-300 ">
-        <IoSearchOutline />
+        <Link href={"/search"}>
+          <IoSearchOutline />
+        </Link>
       </li>
       <li
         className=" cursor-pointer dark:delay-300"

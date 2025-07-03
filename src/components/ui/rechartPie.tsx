@@ -33,7 +33,7 @@ export default function RechartsPie() {
         fill="color"
       >
         {data02.map((entry, index) => (
-          <Cell fill={entry.color} />
+          <Cell key={index} fill={entry.color} />
         ))}
       </Pie>
     </PieChart>
