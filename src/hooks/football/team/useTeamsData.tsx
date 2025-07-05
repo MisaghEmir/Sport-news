@@ -55,7 +55,7 @@ export const useTeamData = (
     //   //   },
     // } // cache time default is 5min
   );
-  return { teams: data?.data, isLoading, isError, error };
+  return { team: data?.data, isLoading, isError, error };
 };
 
 export const useTeamHistoryData = (

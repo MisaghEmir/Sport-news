@@ -1,17 +1,43 @@
+"use client";
+import { useTeamData } from "@/hooks/football/team/useTeamsData";
 import Link from "next/link";
+import { Skeleton } from "@/components/ui/skeleton";
 
-const Navigation = ({ title, image }: { title: string; image: string }) => {
+const Navigation = ({
+  title,
+  image,
+  id,
+}: {
+  title: string;
+  image: string;
+  id: string;
+}) => {
+  const { team, isLoading } = useTeamData(id);
+  console.log(team);
   return (
     <div>
       <div className="bg-color_bg_00 opacity-70 text-white">
         <div className="flex justify-between pl-7 md:pl-28 border-b border-color_border_70">
           <div className="flex items-end py-5">
             <div>
-              <img src={image} className="h-[4.7rem]" alt="" />
+              {isLoading ? (
+                <Skeleton className="h-[4.7rem] w-[4.7rem] bg-zinc-600 rounded-full" />
+              ) : (
+                <img src={team?.image} className="h-[4.7rem]" alt="" />
+              )}
             </div>
             <div>
-              <h1 className=" text-4xl font-bold pl-2">{title}</h1>
-              <p className="pl-2">Spain</p>
+              {isLoading ? (
+                <Skeleton className="h-8 ml-2 w-[250px] bg-zinc-600 rounded-full mb-2" />
+              ) : (
+                <h1 className=" text-4xl font-bold pl-2">{team?.name}</h1>
+              )}
+
+              {isLoading ? (
+                <Skeleton className="h-4 ml-2 w-[250px] bg-zinc-600 rounded-full" />
+              ) : (
+                <p className="pl-2">Spain</p>
+              )}
             </div>
           </div>
           <div className="flex justify-end "></div>

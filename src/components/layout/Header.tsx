@@ -18,8 +18,8 @@ export default function Header() {
 
   return (
     <header
-      className={`bg-white dark:bg-opacity-5 shadow-lg flex justify-between ${
-        scroll > 62 ? "fixed dark:bg-background_body_dark" : "sticky"
+      className={`  shadow-lg flex justify-between ${
+        scroll > 62 ? "fixed bg-background_body dark:bg-background_body_dark" : "sticky dark:bg-opacity-5"
       } w-full z-50 top-0 min-h-6 max-h-56 items-center px-6 py-1`}
     >
       <LeftHeader />

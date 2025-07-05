@@ -7,7 +7,13 @@ import TeamMatchContainer from "@/components/football/team/TeamMatchContainer";
 import TitrLabel from "@/components/ui/TitrLabel";
 import React from "react";
 
-export default function page() {
+export default async function page({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const { id } =  params;
+  console.log({id})
   return (
     <div className="px-6 md:px-28 ">
       <Result />

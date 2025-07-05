@@ -1,4 +1,5 @@
 import React from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -21,7 +22,11 @@ export default function HistoryData({ data }: { data: TeamHistory | null }) {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="account">
-          <Goal data={data?.goal} />
+          {data ? (
+            <Goal data={data?.goal} />
+          ) : (
+            <Skeleton className="h-72 w-full bg-zinc-600 rounded-sm" />
+          )}
         </TabsContent>
         <TabsContent value="password">
           <Pass data={data?.goal} />
@@ -39,7 +44,7 @@ export default function HistoryData({ data }: { data: TeamHistory | null }) {
 
 const Goal = ({ data }: { data: GoalPlayer | undefined }) => {
   return (
-    <div className="text-[12px] font-serif border border-color_border_100 ">
+    <div className="text-[12px] font-serif border ">
       <div className="p-2 grid grid-cols-11">
         <div className=" col-span-7">Tipo</div>
         <div className=" col-span-2 text-center">Total</div>
@@ -71,7 +76,7 @@ const Goal = ({ data }: { data: GoalPlayer | undefined }) => {
 
 const Pass = ({ data }: { data: GoalPlayer | undefined }) => {
   return (
-    <div className="text-[12px] font-serif border border-color_border_100 ">
+    <div className="text-[12px] font-serif border">
       <div className="p-2 grid grid-cols-11">
         <div className=" col-span-7">Tipo</div>
         <div className=" col-span-2 text-center">Total</div>
@@ -103,7 +108,7 @@ const Pass = ({ data }: { data: GoalPlayer | undefined }) => {
 
 const Card = ({ data }: { data: CardTeam | undefined }) => {
   return (
-    <div className="text-[12px] font-serif border border-color_border_100 ">
+    <div className="text-[12px] font-serif border">
       <div className="p-2 grid grid-cols-11">
         <div className=" col-span-7">Tipo</div>
         <div className=" col-span-2 text-center">Total</div>

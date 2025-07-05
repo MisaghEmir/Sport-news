@@ -2,6 +2,8 @@ import Header from "@/components/layout/Header";
 import "../globals.css";
 import "../env.css";
 import Footer from "@/components/layout/Footer";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import FilterSidebar from "@/components/layout/search/FilterSidebar";
 
 export default function RootLayout({
   children,
@@ -13,7 +15,10 @@ export default function RootLayout({
       <div className=" relative ">
         <Header />
       </div>
-      {children}
+      <SidebarProvider defaultOpen={false}>
+        <FilterSidebar />
+        {children}
+      </SidebarProvider>
       <Footer />
     </>
   );

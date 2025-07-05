@@ -1,8 +1,10 @@
 import React from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function NewsRow() {
   return (
     <div className=" grid grid-cols-9 mt-2 hover:bg-color_bg_29 p-1 cursor-pointer rounded-md">
+       {/* <Skeleton className="h-[6rem] w-[6.5rem] bg-zinc-600 rounded-md" /> */}
       <div className="col-span-3">
         <img
           src="/images/test/1.avif"
