@@ -25,6 +25,20 @@ interface CardTeam {
   red: number;
 }
 
+interface Assist {
+  attempted: number;
+  accurate: number;
+  unsuccessful: number;
+}
+
+interface Shot {
+  atGoal: number;
+  onGoal: number;
+  outGoal: number;
+}
+
+
+
 interface TeamHistory {
   teamId: String;
   LeagueId: String;
@@ -32,11 +46,11 @@ interface TeamHistory {
   Year: String;
   goal: GoalPlayer;
   goalPlayer: GoalPlayer[];
-  assist: Object;
+  assist: Assist;
   assistPlayer: GoalPlayer[];
-  shot: Object;
+  shot: Shot;
   shotPlayer: GoalPlayer[];
-  card: Object;
+  card: CardTeam;
   cardPlayer: CardTeam[];
   foul: Object;
   foulPlayer: GoalPlayer[];

@@ -20,6 +20,9 @@ export default function page() {
   return (
     <div className="w-full">
       <HeaderSearch />
+      <div>
+       
+      </div>
     </div>
   );
 }

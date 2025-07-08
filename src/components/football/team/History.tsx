@@ -5,6 +5,8 @@ import { useLeaguesData } from "@/hooks/football/league/useLeaguesData";
 import { useTeamHistoryData } from "@/hooks/football/team/useTeamsData";
 import React, { useCallback, useEffect, useState } from "react";
 import HistoryData from "./tables/historyData";
+import { returnLeagueName } from "@/actions/leagueActions";
+import SelectLeague from "@/components/elements/SelectLeague";
 
 export default function History() {
   const [teamData, setTeamsData] = useState([]);
@@ -15,9 +17,9 @@ export default function History() {
   const [focusData, setFocusData] = useState<TeamHistory | null>(null);
 
   const { teams, Leagues, Years, isLoading, isError } = useTeamHistoryData(
-    "671bf3c7233ef514fd833f9f"
+    "671bf0d4233ef514fd833f9e"
   );
-  const { leagues } = useLeaguesData();
+  const { leagues }: { leagues: League[] } = useLeaguesData();
 
   const getTeamHistory = useCallback(async () => {
     const Fitem = teams[0];
@@ -66,7 +68,7 @@ export default function History() {
     setFocusData(data[0]);
     setYears(years);
     setYear(value);
-    setGame(data.game);
+    setGame(data[0].game);
     console.log({ data: data[0] });
   };
 
@@ -86,12 +88,16 @@ export default function History() {
   // };
 
   console.log(Leagues);
+
   return (
     <div>
       <div className="pt-4 flex gap-10">
         <div>
-          <SelectEl
-            label=""
+          <p className="text-xs text-color_text_13 mb-2 dark:text-color_text_26">
+            League and Cups
+          </p>
+          <SelectLeague
+            label={"laliga"}
             arr={Leagues?.map((item: string) => {
               return {
                 value: item,
@@ -104,14 +110,26 @@ export default function History() {
           />
         </div>
         <div>
+          <p className="text-xs text-color_text_13 mb-2 dark:text-color_text_26">
+            Years
+          </p>
           <SelectEl
-            label=""
+            label={year}
             arr={years?.map((item: string) => {
               return { value: item, label: item };
             })}
             selectHandle={(value: string) => yearCombobox(value)}
           />
         </div>
+      </div>
+      <div className="mt-4">
+        <h3 className="font-bold text-lg">{returnLeagueName(league, leagues)}</h3>
+        <p className="text-xs font-bold text-color_text_13 mb-2 dark:text-color_text_26">
+          {year}
+        </p>
+        <p className="text-xs font-bold text-color_text_13 mb-2 dark:text-color_text_26">
+          Game played: {game}
+        </p>
       </div>
       <HistoryData data={focusData} />
     </div>

@@ -20,20 +20,15 @@ type Props = {
   selectHandle: (value: string) => void | String;
 };
 
-export default function SelectEl({ label, arr, selectHandle }: Props) {
-  const [selectedCity, setSelectedCity] = useState<string>("");
-  useEffect(() => {
-    const firstCity = arr?.[0]?.value;
-    setSelectedCity(firstCity || "");
-    console.log(label)
-  }, [arr]);
+export default function SelectLeague({ label, arr, selectHandle }: Props) {
+ 
 
   return (
     <div>
       {arr?.length > 0 ? (
-        <Select defaultValue={label} value={label} onValueChange={(e) => selectHandle(e)}>
+        <Select defaultValue={arr[0].value}  onValueChange={(e) => selectHandle(e)}>
           <SelectTrigger className="w-[280px]">
-            <SelectValue defaultValue={label}  placeholder={label} />
+            <SelectValue defaultValue={arr[0].value}  placeholder={arr[0].value} />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
