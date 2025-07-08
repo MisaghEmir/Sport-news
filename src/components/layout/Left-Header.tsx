@@ -53,7 +53,7 @@ const components: { title: string; href: string; description: string }[] = [
 const LeftHeader = () => {
   return (
     <div className="items-center flex gap-3 text-sm text-color_text_12 dark:text-white">
-       <ul>
+      <ul>
         <li>
           <Link href={"/"}>
             <img
@@ -67,14 +67,39 @@ const LeftHeader = () => {
       <NavigationMenu viewport={false}>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent px-3">Explore</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="bg-transparent px-3">
+              Explore
+            </NavigationMenuTrigger>
             <NavigationMenuContent className="">
-              <ul className="grid gap-0 py-6 px-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <li className="row-span-3 hover:bg-color_bg_29  dark:hover:bg-color_bg_10 ">
+              <ul className="grid col-span-1 gap-0 py-2 px-2 md:w-[400px] lg:w-[300px] ">
+                <ListItem
+                  href="/docs"
+                  title="Laliga"
+                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
+                >
+                  Re-usable components built using Radix UI and Tailwind CSS.
+                </ListItem>
+                <ListItem
+                  href="/docs"
+                  title="Laliga"
+                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
+                >
+                  Re-usable components built using Radix UI and Tailwind CSS.
+                </ListItem>
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className="bg-transparent px-3">
+              Football
+            </NavigationMenuTrigger>
+            <NavigationMenuContent className="">
+              <ul className="grid gap-0 py-2 px-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                <li className="row-span-3 rounded-sm hover:bg-color_bg_29  dark:hover:bg-color_bg_10 ">
                   <NavigationMenuLink asChild>
-                    <a
+                    <Link
                       className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-3 no-underline outline-hidden select-none focus:shadow-md"
-                      href="/"
+                      href="/football"
                     >
                       <div className="mt-4 mb-2 text-lg font-medium">
                         shadcn/ui
@@ -82,23 +107,37 @@ const LeftHeader = () => {
                       <p className="text-muted-foreground text-sm leading-tight">
                         Beautifully designed components built with Tailwind CSS.
                       </p>
-                    </a>
+                    </Link>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href="/docs" title="Laliga" className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3">
+                <ListItem
+                  href="/docs"
+                  title="Laliga"
+                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
+                >
                   Re-usable components built using Radix UI and Tailwind CSS.
                 </ListItem>
-                <ListItem href="/docs/installation" title="Seri A" className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3">
+                <ListItem
+                  href="/docs/installation"
+                  title="Seri A"
+                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
+                >
                   How to install dependencies and structure your app.
                 </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Typography" className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3">
+                <ListItem
+                  href="/docs/primitives/typography"
+                  title="Typography"
+                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
+                >
                   Styles for headings, paragraphs, lists...etc
                 </ListItem>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent px-3">Explore</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="bg-transparent">
+              Nba
+            </NavigationMenuTrigger>
             <NavigationMenuContent className="">
               <ul className="grid gap-0 py-6 px-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 <li className="row-span-3 hover:bg-color_bg_29  dark:hover:bg-color_bg_10 ">
@@ -116,20 +155,40 @@ const LeftHeader = () => {
                     </a>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href="/docs" title="Laliga" className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3">
+                <ListItem
+                  href="/docs"
+                  title="Laliga"
+                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
+                >
                   Re-usable components built using Radix UI and Tailwind CSS.
                 </ListItem>
-                <ListItem href="/docs/installation" title="Seri A" className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3">
+                <ListItem
+                  href="/docs/installation"
+                  title="Seri A"
+                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
+                >
                   How to install dependencies and structure your app.
                 </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Typography" className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3">
+                <ListItem
+                  href="/docs/primitives/typography"
+                  title="Typography"
+                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
+                >
                   Styles for headings, paragraphs, lists...etc
                 </ListItem>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
+          <NavigationMenuItem
+            asChild
+            className={`${navigationMenuTriggerStyle()} bg-transparent`}
+          >
+            <Link href="/football/matches">Matches</Link>
+          </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent">Football</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="bg-transparent border-l">
+              Other
+            </NavigationMenuTrigger>
             <NavigationMenuContent className="">
               <ul className="grid gap-0 py-6 px-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 <li className="row-span-3 hover:bg-color_bg_29  dark:hover:bg-color_bg_10 ">
@@ -147,13 +206,25 @@ const LeftHeader = () => {
                     </a>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href="/docs" title="Laliga" className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3">
+                <ListItem
+                  href="/docs"
+                  title="Laliga"
+                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
+                >
                   Re-usable components built using Radix UI and Tailwind CSS.
                 </ListItem>
-                <ListItem href="/docs/installation" title="Seri A" className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3">
+                <ListItem
+                  href="/docs/installation"
+                  title="Seri A"
+                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
+                >
                   How to install dependencies and structure your app.
                 </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Typography" className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3">
+                <ListItem
+                  href="/docs/primitives/typography"
+                  title="Typography"
+                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
+                >
                   Styles for headings, paragraphs, lists...etc
                 </ListItem>
               </ul>
@@ -161,20 +232,6 @@ const LeftHeader = () => {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-     
-      <ul className="flex gap-2">
-        <li className="px-2 dark:delay-50">
-          <Link href={"/exploer"}>Explore</Link>
-        </li>
-        <li className="px-2 dark:delay-50">
-          <Link href={"/football"}>Football</Link>
-        </li>
-        <li className="px-2 dark:delay-100">Nba</li>
-        <li className="border-r px-3 dark:delay-100">
-          <Link href={"/football/matches"}>Matches</Link>
-        </li>
-        <li className=" px-3 dark:delay-100">Other</li>
-      </ul>
     </div>
   );
 };

@@ -8,7 +8,7 @@ import { Suspense } from "react";
 import Loading from "@/config/Loading";
 import ProviderRedux from "@/redux/Provider";
 import ScrollHandle from "@/redux/ScrollHandle";
-
+import { LoginProvider } from "@/context/LoginContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,11 +34,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} pb-28`}>
         <ProviderRedux>
-          <ThemeProvider>
-            <ScrollHandle />
-            <Suspense fallback={<Loading />}>{children}</Suspense>
-            <Theme />
-          </ThemeProvider>
+          <LoginProvider>
+            <ThemeProvider>
+              <ScrollHandle />
+              <Suspense fallback={<Loading />}>{children}</Suspense>
+              <Theme />
+            </ThemeProvider>
+          </LoginProvider>
         </ProviderRedux>
       </body>
     </html>

@@ -17,7 +17,7 @@ const LoginM: LoginMode = {
 const LoginModeContext = createContext<LoginMode>(LoginM);
 
 const useLoginModeFunction = () => {
-  const [login, setLogin] = useState<Boolean>(false);
+  const [login, setLogin] = useState<Boolean>(true);
 
   useMemo(async () => {}, []);
   const LoginMode: toggleLoginModeType = {
@@ -33,7 +33,7 @@ export const LoginProvider = ({ children }: { children: React.ReactNode }) => {
   const { login, LoginMode } = useLoginModeFunction();
   return (
     <LoginModeContext value={{ login, LoginMode }}>
-      <div className={login ? "dark" : "light"}>{children}</div>
+      {children}
     </LoginModeContext>
   );
 };
