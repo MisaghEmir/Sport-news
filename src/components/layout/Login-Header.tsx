@@ -19,18 +19,31 @@ import {
 import { FaMoon } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { useThemeMode } from "@/context/ThemeMode";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const LoginHeader = () => {
-   const { ThemeMode } = useThemeMode();
+  const { ThemeMode } = useThemeMode();
   return (
     <div>
-      <NavigationMenu viewport={false}>
-        <NavigationMenuList>
+      <NavigationMenu className="items-center" viewport={false}>
+        <NavigationMenuList className="gap-4 mr-4">
           <NavigationMenuItem>
             <Link href={"/search"}>
               <IoSearchOutline />
             </Link>
           </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href={"/football/matches"}>
+              <Button
+                variant={"outline"}
+                className="bg-transparent font-bold rounded-full pt-[5px] px-7 dark:text-white hover:bg-color_bg_28"
+              >
+                Start frist bet
+              </Button>
+            </Link>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+        <NavigationMenuList className="gap-[4px] items-center flex">
           <NavigationMenuItem>
             <li
               className=" cursor-pointer dark:delay-300"
@@ -38,23 +51,15 @@ const LoginHeader = () => {
             >
               <FaMoon />
             </li>
-            <NavigationMenuContent className="">
-              <ul className="grid gap-0 py-2 px-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <li className="row-span-3 rounded-sm hover:bg-color_bg_29  dark:hover:bg-color_bg_10 ">
-                  <NavigationMenuLink asChild>
-                    <Link
-                      className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-3 no-underline outline-hidden select-none focus:shadow-md"
-                      href="/football"
-                    >
-                      <div className="mt-4 mb-2 text-lg font-medium">
-                        shadcn/ui
-                      </div>
-                      <p className="text-muted-foreground text-sm leading-tight">
-                        Beautifully designed components built with Tailwind CSS.
-                      </p>
-                    </Link>
-                  </NavigationMenuLink>
-                </li>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">
+              <li className=" cursor-pointer dark:delay-300">
+                <IoNotificationsSharp />
+              </li>
+            </NavigationMenuTrigger>
+               <NavigationMenuContent className="">
+              <ul className="grid col-span-1 gap-0 py-2 px-2 md:w-[400px] lg:w-[300px] ">
                 <ListItem
                   href="/docs"
                   title="Laliga"
@@ -63,94 +68,29 @@ const LoginHeader = () => {
                   Re-usable components built using Radix UI and Tailwind CSS.
                 </ListItem>
                 <ListItem
-                  href="/docs/installation"
-                  title="Seri A"
-                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
-                >
-                  How to install dependencies and structure your app.
-                </ListItem>
-                <ListItem
-                  href="/docs/primitives/typography"
-                  title="Typography"
-                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
-                >
-                  Styles for headings, paragraphs, lists...etc
-                </ListItem>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-           <li className=" cursor-pointer dark:delay-300">
-                   <IoNotificationsSharp />
-                 </li>
-            <NavigationMenuContent className="">
-              <ul className="grid gap-0 py-6 px-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <li className="row-span-3 hover:bg-color_bg_29  dark:hover:bg-color_bg_10 ">
-                  <NavigationMenuLink asChild>
-                    <a
-                      className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-3 no-underline outline-hidden select-none focus:shadow-md"
-                      href="/"
-                    >
-                      <div className="mt-4 mb-2 text-lg font-medium">
-                        shadcn/ui
-                      </div>
-                      <p className="text-muted-foreground text-sm leading-tight">
-                        Beautifully designed components built with Tailwind CSS.
-                      </p>
-                    </a>
-                  </NavigationMenuLink>
-                </li>
-                <ListItem
                   href="/docs"
                   title="Laliga"
                   className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
                 >
                   Re-usable components built using Radix UI and Tailwind CSS.
                 </ListItem>
-                <ListItem
-                  href="/docs/installation"
-                  title="Seri A"
-                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
-                >
-                  How to install dependencies and structure your app.
-                </ListItem>
-                <ListItem
-                  href="/docs/primitives/typography"
-                  title="Typography"
-                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
-                >
-                  Styles for headings, paragraphs, lists...etc
-                </ListItem>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem
-            asChild
-            className={`${navigationMenuTriggerStyle()} bg-transparent`}
-          >
-            <Link href="/football/matches">Matches</Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent border-l">
-              Other
+          <NavigationMenuItem className={` bg-transparent`}>
+            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">
+              <Link href="/football/matches">
+                <Avatar className="m-0">
+                  <AvatarImage
+                    src="https://github.com/shadcn.png"
+                    alt="@shadcn"
+                  />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+              </Link>
             </NavigationMenuTrigger>
             <NavigationMenuContent className="">
-              <ul className="grid gap-0 py-6 px-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <li className="row-span-3 hover:bg-color_bg_29  dark:hover:bg-color_bg_10 ">
-                  <NavigationMenuLink asChild>
-                    <a
-                      className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-3 no-underline outline-hidden select-none focus:shadow-md"
-                      href="/"
-                    >
-                      <div className="mt-4 mb-2 text-lg font-medium">
-                        shadcn/ui
-                      </div>
-                      <p className="text-muted-foreground text-sm leading-tight">
-                        Beautifully designed components built with Tailwind CSS.
-                      </p>
-                    </a>
-                  </NavigationMenuLink>
-                </li>
+              <ul className="grid col-span-1 gap-0 py-2 px-2 md:w-[400px] lg:w-[300px] ">
                 <ListItem
                   href="/docs"
                   title="Laliga"
@@ -159,18 +99,11 @@ const LoginHeader = () => {
                   Re-usable components built using Radix UI and Tailwind CSS.
                 </ListItem>
                 <ListItem
-                  href="/docs/installation"
-                  title="Seri A"
+                  href="/docs"
+                  title="Laliga"
                   className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
                 >
-                  How to install dependencies and structure your app.
-                </ListItem>
-                <ListItem
-                  href="/docs/primitives/typography"
-                  title="Typography"
-                  className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
-                >
-                  Styles for headings, paragraphs, lists...etc
+                  Re-usable components built using Radix UI and Tailwind CSS.
                 </ListItem>
               </ul>
             </NavigationMenuContent>

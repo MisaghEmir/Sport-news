@@ -17,7 +17,7 @@ const LoginM: LoginMode = {
 const LoginModeContext = createContext<LoginMode>(LoginM);
 
 const useLoginModeFunction = () => {
-  const [login, setLogin] = useState<Boolean>(true);
+  const [login, setLogin] = useState<Boolean>(false);
 
   useMemo(async () => {}, []);
   const LoginMode: toggleLoginModeType = {
