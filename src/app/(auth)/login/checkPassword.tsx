@@ -7,6 +7,7 @@ import { FaGoogle } from "react-icons/fa";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import { useLoginMode } from "@/context/LoginContext";
+import { redirect } from "next/navigation";
 
 export default function PasswordContainer({
   handleCheckEmail,
@@ -15,6 +16,10 @@ export default function PasswordContainer({
 }) {
   const { LoginMode } = useLoginMode();
   const [loading, setLoading] = useState(false);
+
+  const loginHandle = () =>{
+    redirect('/dashbourd')
+  }
   return (
     <div className="flex flex-col justify-between bg-white dark:bg-background_body_dark dark:text-color_text_29 rounded-md p-10 px-20">
       <div className="flex items-center gap-3">
@@ -43,7 +48,7 @@ export default function PasswordContainer({
         />
         <div className="flex justify-end mt-7">
           <Button
-            onClick={LoginMode.toggleLoginMode}
+            onClick={loginHandle}
             className="bg-blue-500 rounded-full pt-[6px] px-5 text-[14px] dark:text-white hover:bg-blue-700"
           >
             {loading ? (

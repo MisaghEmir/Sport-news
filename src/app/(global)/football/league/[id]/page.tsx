@@ -1,5 +1,6 @@
 import Navigation from "@/components/football/league/Navigation";
 import TeamsNavbar from "@/components/football/league/TeamsNavbar";
+import NewsContainer from "@/components/news/NewsContainer";
 import React from "react";
 
 export default function page() {
@@ -13,6 +14,9 @@ export default function page() {
       </div>
       <div>
         <TeamsNavbar />
+      </div>
+   <div className="px-24 mt-20">
+        <NewsContainer/>
       </div>
     </div>
   );
