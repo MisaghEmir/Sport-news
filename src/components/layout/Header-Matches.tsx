@@ -117,11 +117,20 @@ export default function HeaderMatches() {
           <CarouselContent className="">
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem key={index} className="border-color_border_50 m-0">
-                <div className="flex pl-4 gap-7">
+                <div className="flex pl-0 gap-0">
+                  <div className=" w-[150px] flex items-center justify-center relative">
+                    <p className="text-xl absolute font-semibold text-color_text_16 dark:text-white z-10">
+                      Laliga
+                    </p>
+                    <img
+                      src="/images/test/4.png"
+                      className="w-full h-full grayscale  opacity-15 dark:opacity-20 object-cover"
+                      alt=""
+                    />
+                  </div>
                   <Link href={"/football/match/3"}>
                     <Headermatch />
                   </Link>
-                  <Headermatch />
                   <Headermatch />
                   <Headermatch />
                   <Headermatch />

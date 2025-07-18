@@ -37,7 +37,7 @@ export default async function page({
       </div>
        <div className="mt-8">
         <TitrLabel label={"Team leaders in Serie A"} />
-        <div className="grid grid-cols-3 mt-3 gap-4">
+        <div className="grid md:grid-cols-3 mt-3 gap-4">
           <PlayerCard />
           <PlayerCard />
           <PlayerCard />

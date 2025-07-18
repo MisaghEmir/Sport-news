@@ -25,10 +25,10 @@ const LoginHeader = () => {
   const { ThemeMode } = useThemeMode();
   return (
     <div>
-      <NavigationMenu className="items-center" viewport={false}>
+      <NavigationMenu className="items-center" >
         <NavigationMenuList className="gap-4 mr-4">
-          <NavigationMenuItem>
-            <Link href={"/search"}>
+          <NavigationMenuItem >
+            <Link href={"/search"} className="dark:text-color_text_30">
               <IoSearchOutline />
             </Link>
           </NavigationMenuItem>
@@ -43,14 +43,14 @@ const LoginHeader = () => {
             </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
-        <NavigationMenuList className="gap-[4px] items-center flex">
+        <NavigationMenuList className="gap-[4px] items-center flex dark:text-color_text_30">
           <NavigationMenuItem>
-            <li
+            <button
               className=" cursor-pointer dark:delay-300"
               onClick={ThemeMode.toggleThemeMode}
             >
               <FaMoon />
-            </li>
+            </button>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">

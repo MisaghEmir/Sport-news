@@ -2,7 +2,7 @@ import React from "react";
 
 function Headermatch() {
   return (
-    <div className="flex flex-col py-2 gap-2 text-xs w-32">
+    <div className="flex flex-col py-2 gap-2 text-xs w-[155px] px-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <img

@@ -5,6 +5,6 @@ export default function page() {
   return (
     <div>
         <MatchNavigation />
-        page</div>
+        </div>
   )
 }

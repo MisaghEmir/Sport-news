@@ -2,6 +2,7 @@
 import { useTeamData } from "@/hooks/football/team/useTeamsData";
 import Link from "next/link";
 import { Skeleton } from "@/components/ui/skeleton";
+import { notFound } from "next/navigation";
 
 const Navigation = ({
   title,
@@ -12,8 +13,9 @@ const Navigation = ({
   image: string;
   id: string;
 }) => {
-  const { team, isLoading } = useTeamData(id);
+  const { team, isLoading,isError } = useTeamData(id);
   console.log(team);
+  if(isError) notFound()
   return (
     <div>
       <div className="bg-color_bg_00 opacity-70 text-white">
@@ -46,7 +48,7 @@ const Navigation = ({
           <div className="flex  sticky top-0 gap-8 font-bold text-sm">
             <Link
               href="./2/news"
-              className="border-theme_border_100 border-b-4 border-transparent px-2 pb-1 footballnav "
+              className=" border-b-4 border-transparent px-2 pb-1 footballnav "
             >
               Latest news
             </Link>

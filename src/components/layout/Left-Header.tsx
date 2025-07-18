@@ -64,7 +64,7 @@ const LeftHeader = () => {
           </Link>
         </li>
       </ul>
-      <NavigationMenu viewport={false}>
+      <NavigationMenu >
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger className="bg-transparent px-3">
@@ -90,9 +90,14 @@ const LeftHeader = () => {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent px-3">
-              Football
-            </NavigationMenuTrigger>
+            <Link
+              className=""
+              href="/football"
+            >
+              <NavigationMenuTrigger className="bg-transparent px-3">
+                Football
+              </NavigationMenuTrigger>
+            </Link>
             <NavigationMenuContent className="">
               <ul className="grid gap-0 py-2 px-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 <li className="row-span-3 rounded-sm hover:bg-color_bg_29  dark:hover:bg-color_bg_10 ">

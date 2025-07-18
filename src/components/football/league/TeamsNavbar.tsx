@@ -10,7 +10,7 @@ export default function TeamsNavbar() {
   return (
     <div
       className={`flex justify-between bg-color_bg_28 dark:bg-transparent dark:bg-opacity-0 ${
-        !isLoading && "px-28 py-2"
+        !isLoading && "px-2 md:px-28 py-2"
       }`}
     >
       {isLoading ? (
