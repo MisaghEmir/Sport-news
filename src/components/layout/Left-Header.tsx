@@ -64,12 +64,14 @@ const LeftHeader = () => {
           </Link>
         </li>
       </ul>
-      <NavigationMenu >
+      <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent px-3">
-              Explore
-            </NavigationMenuTrigger>
+            <Link className="" href="/exploer">
+              <NavigationMenuTrigger className="bg-transparent px-3">
+                Explore
+              </NavigationMenuTrigger>
+            </Link>
             <NavigationMenuContent className="">
               <ul className="grid col-span-1 gap-0 py-2 px-2 md:w-[400px] lg:w-[300px] ">
                 <ListItem
@@ -90,10 +92,7 @@ const LeftHeader = () => {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link
-              className=""
-              href="/football"
-            >
+            <Link className="" href="/football">
               <NavigationMenuTrigger className="bg-transparent px-3">
                 Football
               </NavigationMenuTrigger>
@@ -107,7 +106,7 @@ const LeftHeader = () => {
                       href="/football"
                     >
                       <div className="mt-4 mb-2 text-lg font-medium">
-                        shadcn/ui
+                        All Football
                       </div>
                       <p className="text-muted-foreground text-sm leading-tight">
                         Beautifully designed components built with Tailwind CSS.

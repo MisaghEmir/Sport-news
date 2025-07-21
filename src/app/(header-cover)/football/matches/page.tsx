@@ -1,27 +1,41 @@
+"use client";
+import MatchSingle from "@/components/football/matches/Match-Single";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useMatchesData } from "@/hooks/football/match/useMatchesData";
 import React from "react";
 
 function page() {
+  const { matches, isLoading }: { matches: Match[]; isLoading: boolean } =
+    useMatchesData();
   return (
-    <div>
-      <div className=" relative w-full h-[291px] top-0">
-        <img
-          src="/images/random/random1.jpg "
-          alt=""
-          className="w-full h-full absolute top-0 left-0 object-cover"
-        />
-         <div className=" absolute w-full h-full top-0 left-0 z-10 bg-black opacity-45 flex justify-center items-center"></div>
-         <div className=" absolute w-full h-full top-0 left-0 z-20 flex flex-col justify-center items-center">
-          <p className="text-white text-7xl opacity-100 font-bold mt-10">
-            Browse Matches
-          </p>
-          <p className=" text-[27px] mt-3 text-color_text_27 opacity-100 font-bold">
-            Find the perfect asset for your next project
-          </p>
-        </div>
+    <div className="w-full p-10 px-7">
+      <div className="mb-5">
+        <h3 className="text-lg font-bold">Laliga</h3>
+        <small>22/08/2024 04:29</small>
       </div>
-      <div className="my-96">amir</div>
-      <div className="my-96">amir</div>
-      <div className="my-96">amir</div>
+      <div className="grid grid-cols-2 gap-8">
+        {isLoading ? (
+          <>
+            <Skeleton className="w-full h-20" />
+            <Skeleton className="w-full h-20" />
+            <Skeleton className="w-full h-20" />
+            <Skeleton className="w-full h-20" />
+            <Skeleton className="w-full h-20" />
+            <Skeleton className="w-full h-20" />
+          </>
+        ) : (
+          matches?.map((item, index) => (
+            <>
+              <div key={index}>
+                <MatchSingle match={item} />
+              </div>
+              <div key={index}>
+                <MatchSingle match={item} />
+              </div>
+            </>
+          ))
+        )}
+      </div>
     </div>
   );
 }

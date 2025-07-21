@@ -3,7 +3,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="mt-20 px-28">
+    <div className="mt-20 px-28   ">
       <div className="flex">
         <div>
           <Label title="Squad" rounded />

@@ -8,9 +8,9 @@ export default function layout({
   nav: React.ReactNode;
 }) {
   return (
-    <div>
+    <div className="w-full">
       <div>{children}</div>
-      <div>
+      <div className="w-full">
         <div>{nav}</div>
       </div>
     </div>

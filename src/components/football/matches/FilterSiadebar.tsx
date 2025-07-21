@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Sidebar,
   SidebarContent,
@@ -28,6 +28,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import SelectEl from "@/components/elements/SelectEl";
+import { useSelector } from "react-redux";
 
 const items = [
   {
@@ -69,6 +70,10 @@ export default function FilterSidebar() {
   } = useSidebar();
   const [date, setDate] = useState<Date | undefined>(new Date());
   const [openDate, setOpenDate] = useState(false);
+   const scroll = useSelector(
+    (state: { toolsReducer: { scroll: number } }) => state.toolsReducer.scroll
+  );
+
 
   function formatDate(date: Date | undefined) {
     if (!date) {
@@ -80,39 +85,50 @@ export default function FilterSidebar() {
       year: "numeric",
     });
   }
+
+ 
+
   return (
-    <div>
-      <Sidebar className="h-full top-14 mt-0 py-4">
-        <SidebarContent>
+    <div className="sticky top-0 px-5 border-r w-[450px]">
+      <div className={`mt-0   pb-32 ${scroll > 230 ? 'fixed top-4 pt-12' : 'pt-3'}`}>
+        <SidebarContent className="  top-0 ">
           <SidebarGroup>
             <div className="flex justify-between items-center pr-1">
               <SidebarGroupLabel>Application</SidebarGroupLabel>
               <span
                 className=" cursor-pointer"
                 onClick={(open) => setOpen(false)}
-              >
-                <ArrowLeftFromLine size={20} />
-              </span>
+              ></span>
             </div>
             <SidebarGroupContent>
-              <SidebarMenu>
-             
+              <SidebarMenu className="gap-7">
                 <SidebarMenuItem>
                   <div className="">
-                    <p className="m-1" >
-                       League
-                    </p>
+                    <p className="m-1">Sport</p>
                     <div className="">
-                      <SelectEl label={'League'} arr={[{value: 'Laliga',label: 'Laliga'}]} selectHandle={() =>{}} />
+                      <SelectEl
+                        label={"League"}
+                        arr={[{ value: "Laliga", label: "Laliga" }]}
+                        selectHandle={() => {}}
+                      />
                     </div>
-                  
                   </div>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <div className="">
-                    <p className="m-1" >
-                        Schedule Date
-                    </p>
+                    <p className="m-1">League</p>
+                    <div className="">
+                      <SelectEl
+                        label={"League"}
+                        arr={[{ value: "Laliga", label: "Laliga" }]}
+                        selectHandle={() => {}}
+                      />
+                    </div>
+                  </div>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <div className="">
+                    <p className="m-1">Schedule Date</p>
                     <div className="relative flex gap-2">
                       <Input
                         id="date"
@@ -158,7 +174,7 @@ export default function FilterSidebar() {
             </SidebarGroupContent>
           </SidebarGroup>
         </SidebarContent>
-      </Sidebar>
+      </div>
     </div>
   );
 }

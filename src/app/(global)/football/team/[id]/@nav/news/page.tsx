@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function page() {
   return (
-   <div className="px-24 mt-20">
+   <div className="px-24 pt-20">
       <NewsContainer />
     </div>
   )

@@ -1,10 +1,15 @@
 import MatchNavigation from '@/components/football/matches/Match-Navigation'
 import React from 'react'
 
-export default function page() {
+export default async function page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const {id} = await params
   return (
     <div>
-        <MatchNavigation />
+        <MatchNavigation id={id} />
         </div>
   )
 }

@@ -15,7 +15,7 @@ export default async function page({
   const { id } =  params;
   console.log({id})
   return (
-    <div className="px-6 md:px-28 ">
+    <div className="px-6 md:px-28">
       <Result />
       <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-7">
         <div className=" col-span-1">

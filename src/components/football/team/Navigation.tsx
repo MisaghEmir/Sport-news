@@ -47,7 +47,7 @@ const Navigation = ({
         <div className="flex justify-between px-10 md:px-28 pt-3">
           <div className="flex  sticky top-0 gap-8 font-bold text-sm">
             <Link
-              href="./2/news"
+               href={`/football/team/${id}/news`}
               className=" border-b-4 border-transparent px-2 pb-1 footballnav "
             >
               Latest news
@@ -59,16 +59,16 @@ const Navigation = ({
               Club info
             </Link>
             <Link
-              href="./2/squad"
+             href={`/football/team/${id}/squad`}
               className="hover:border-theme_border_100 border-b-4 border-transparent px-2 pb-1"
             >
               Squad
             </Link>
             <Link
-              href="./squad"
+               href={`/football/team/${id}/calender`}
               className="hover:border-theme_border_100 border-b-4 border-transparent px-2 pb-1"
             >
-              Schedule
+              Calender
             </Link>
           </div>
         </div>

@@ -39,3 +39,24 @@ export const fetchTeamHistory = async (id: string) => {
   });
   return response.data;
 };
+
+
+export const fetchMatches = async () => {
+  const response = await axios.get(`http://localhost:8080/matches`, {
+    headers: {
+      user: "EmirMisagh",
+      password: "09025941001a",
+    },
+  });
+  return response.data;
+};
+
+export const fetchMatch = async (id: string) => {
+  const response = await axios.get(`http://localhost:8080/matches/${id}`, {
+    headers: {
+      user: "EmirMisagh",
+      password: "09025941001a",
+    },
+  });
+  return response.data;
+};

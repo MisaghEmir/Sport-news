@@ -1,7 +1,5 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
-import LeftHeader from "../Left-Header";
-import RightHeader from "../Right-Header";
 import Left from "./Left";
 import Right from "./Right";
 

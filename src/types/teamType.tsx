@@ -2,7 +2,7 @@ interface TeamType {
   _id: String;
   name: String;
   nickname: String;
-  image: String;
+  image: string;
   sport: String;
   country: String;
   league: String;
