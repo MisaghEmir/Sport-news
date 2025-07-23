@@ -89,7 +89,7 @@ const PasswordContainer = ({
       </div>
       <div className="flex justify-end mt-7">
         <Button
-          onClick={() => setLoading(true)}
+          onClick={handleCheckEmail}
           className="bg-blue-500 pt-[6px] text-[14px] rounded-full  px-5 dark:text-white hover:bg-blue-700"
         >
           {loading ? (

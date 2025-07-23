@@ -60,7 +60,7 @@ const items = [
   },
 ];
 
-export default function SidebarDashbourd() {
+export default function SidebarProfile() {
   const {
     state,
     open,
@@ -85,36 +85,34 @@ export default function SidebarDashbourd() {
   }
   return (
     <div>
-      <Sidebar collapsible="icon" className="h-6/7 top-14 mt-0 py-4">
+      <Sidebar
+        collapsible="icon"
+        side="right"
+        className="h-6/7 w-56 top-14 mt-0 py-4 px-6"
+      >
         <SidebarContent>
           <SidebarGroup>
-            <div className="flex justify-between items-center pr-1">
-              <SidebarGroupLabel>Application</SidebarGroupLabel>
-             
-            </div>
             <SidebarGroupContent>
               <SidebarMenu>
-                {items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild>
-                      <a href={item.url}>
-                        {open ? (
-                          <item.icon />
-                        ) : (
-                          <Tooltip>
-                            <TooltipTrigger asChild>
-                              <item.icon />
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p>{item.title}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        )}
-                        <span>{item.title}</span>
-                      </a>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
+                <SidebarMenuItem className="flex justify-center">
+                  <div className="w-32 h-32 relative mt-4 cursor-pointer rounded-full overflow-hidden border">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <img src="https://github.com/shadcn.png" alt="" />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Change your avatar</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </div>
+                </SidebarMenuItem>
+                <SidebarMenuItem className="mt-4">
+                  <p className="text-xl font-bold">Amir Misagh</p>
+                  <span>Misagh</span>
+                </SidebarMenuItem>
+                <SidebarMenuItem className="mt-10">
+                 <Button variant={'outline'} className="w-full py-0 p-0">Edit Profile</Button>
+                </SidebarMenuItem>
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>

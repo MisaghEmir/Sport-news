@@ -4,9 +4,12 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import EmailContainer from "./checkEmail";
 import PasswordContainer from "./checkPassword";
+import { useLoginMode } from "@/context/LoginContext";
+import { redirect } from "next/navigation";
 
 export default function page() {
      const [emailCheck, setEmailCheck] = useState(false);
+      const { LoginMode } = useLoginMode();
 
      useEffect(() => {
         gsap.to(".email", 0.0, { opacity: 0 });
@@ -37,6 +40,12 @@ export default function page() {
           }, 180);
         }
       };
+
+      const handleSubmit = () =>{
+          LoginMode.toggleLoginMode()
+redirect('/dashbourd/help')
+      }
+
   return (
       <div className=" relative">
       <div className="fixed top-0 left-0 w-full h-full">
@@ -71,7 +80,7 @@ export default function page() {
               !emailCheck && "hidden"
             } password pr-[10%]  p-[4%] md:pl-0`}
           >
-            <PasswordContainer handleCheckEmail={handleCheckEmail} />
+            <PasswordContainer handleCheckEmail={handleSubmit} />
           </div>
         </div>
       </div>

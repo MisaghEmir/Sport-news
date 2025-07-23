@@ -17,12 +17,14 @@ const LoginM: LoginMode = {
 const LoginModeContext = createContext<LoginMode>(LoginM);
 
 const useLoginModeFunction = () => {
-  const [login, setLogin] = useState<Boolean>(true);
+  const [login, setLogin] = useState<Boolean>(false);
+  const [user, setUser] = useState<string>("false");
 
   useMemo(async () => {}, []);
   const LoginMode: toggleLoginModeType = {
     toggleLoginMode: () => {
       setLogin(!login);
+      if(login === false) setUser('true')
     },
   };
 
