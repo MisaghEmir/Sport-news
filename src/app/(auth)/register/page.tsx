@@ -8,46 +8,46 @@ import { useLoginMode } from "@/context/LoginContext";
 import { redirect } from "next/navigation";
 
 export default function page() {
-     const [emailCheck, setEmailCheck] = useState(false);
-      const { LoginMode } = useLoginMode();
+  const [emailCheck, setEmailCheck] = useState(false);
+  const { LoginMode } = useLoginMode();
 
-     useEffect(() => {
-        gsap.to(".email", 0.0, { opacity: 0 });
-        gsap.to(".email", 0.4, { x: 60 });
-        gsap.to(".logo", 0.0, { opacity: 0 });
-        gsap.to(".logo", 0.4, { y: 60 });
-    
-        setTimeout(() => {
-          gsap.to(".email", 0.4, { x: 0, opacity: 1 });
-          gsap.to(".logo", 0.4, { y: 0, opacity: 1 });
-        }, 200);
-      }, []);
-    
-      const handleCheckEmail = () => {
-        if (emailCheck) {
-          gsap.to(".password", 0.4, { x: -30, opacity: 0 });
-          gsap.to(".email", 0.4, { x: 60 });
-          setTimeout(() => {
-            setEmailCheck(false);
-            gsap.to(".email", 0.4, { x: 0, opacity: 1 });
-          }, 180);
-        } else {
-          gsap.to(".password", 0.4, { x: 60 });
-          gsap.to(".email", 0.4, { x: -30, opacity: 0 });
-          setTimeout(() => {
-            setEmailCheck(true);
-            gsap.to(".password", 0.4, { x: 0, opacity: 1 });
-          }, 180);
-        }
-      };
+  useEffect(() => {
+    gsap.to(".email", 0.0, { opacity: 0 });
+    gsap.to(".email", 0.4, { x: 60 });
+    gsap.to(".logo", 0.0, { opacity: 0 });
+    gsap.to(".logo", 0.4, { y: 60 });
 
-      const handleSubmit = () =>{
-          LoginMode.toggleLoginMode()
-redirect('/dashbourd/help')
-      }
+    setTimeout(() => {
+      gsap.to(".email", 0.4, { x: 0, opacity: 1 });
+      gsap.to(".logo", 0.4, { y: 0, opacity: 1 });
+    }, 200);
+  }, []);
+
+  const handleCheckEmail = () => {
+    if (emailCheck) {
+      gsap.to(".password", 0.4, { x: -30, opacity: 0 });
+      gsap.to(".email", 0.4, { x: 60 });
+      setTimeout(() => {
+        setEmailCheck(false);
+        gsap.to(".email", 0.4, { x: 0, opacity: 1 });
+      }, 180);
+    } else {
+      gsap.to(".password", 0.4, { x: 60 });
+      gsap.to(".email", 0.4, { x: -30, opacity: 0 });
+      setTimeout(() => {
+        setEmailCheck(true);
+        gsap.to(".password", 0.4, { x: 0, opacity: 1 });
+      }, 180);
+    }
+  };
+
+  const handleSubmit = () => {
+    LoginMode.toggleLoginMode();
+    redirect("/help");
+  };
 
   return (
-      <div className=" relative">
+    <div className=" relative">
       <div className="fixed top-0 left-0 w-full h-full">
         <img
           src="/images/random/random1.jpg"
@@ -85,5 +85,5 @@ redirect('/dashbourd/help')
         </div>
       </div>
     </div>
-  )
+  );
 }

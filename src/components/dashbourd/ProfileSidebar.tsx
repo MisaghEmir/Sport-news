@@ -31,34 +31,28 @@ import {
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
-const items = [
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-];
+import Link from "next/link";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import {
+  Mail,
+  Brain,
+  Bolt,
+  Pencil,
+  Bitcoin,
+  WalletMinimal,
+  Eye,
+  Copy,
+} from "lucide-react";
 
 export default function SidebarProfile() {
   const {
@@ -88,13 +82,13 @@ export default function SidebarProfile() {
       <Sidebar
         collapsible="icon"
         side="right"
-        className="h-6/7 w-56 top-14 mt-0 py-4 px-6"
+        className="h-6/7 w-56 top-14 mt-0 py-4 px-6 dark:bg-background_body_dark overflow-x-hidden"
       >
-        <SidebarContent>
+        <SidebarContent color="transparent" className="justify-between dark:bg-none flex flex-col pb-5 overflow-x-hidden transition-all delay-100">
           <SidebarGroup>
             <SidebarGroupContent>
               <SidebarMenu>
-                <SidebarMenuItem className="flex justify-center">
+                <SidebarMenuItem className="flex justify-center bg-none">
                   <div className="w-32 h-32 relative mt-4 cursor-pointer rounded-full overflow-hidden border">
                     <Tooltip>
                       <TooltipTrigger asChild>
@@ -110,8 +104,149 @@ export default function SidebarProfile() {
                   <p className="text-xl font-bold">Amir Misagh</p>
                   <span>Misagh</span>
                 </SidebarMenuItem>
-                <SidebarMenuItem className="mt-10">
-                 <Button variant={'outline'} className="w-full py-0 p-0">Edit Profile</Button>
+                <SidebarMenuItem className="mt-10 flex items-center gap-2">
+                  <Mail size={16} />{" "}
+                  <span className="text-[16px] font-semibold">
+                    Misagh.amir@...
+                  </span>
+                </SidebarMenuItem>
+                <SidebarMenuItem className="mt-3 flex items-center gap-2">
+                  <Bitcoin size={16} />{" "}
+                  <span className="text-[16px] font-semibold">20</span>
+                </SidebarMenuItem>
+                <SidebarMenuItem className="mt-2 flex items-center gap-2">
+                  <WalletMinimal size={16} />{" "}
+                  <span className="text-[16px] w-full flex justify-between items-center mt-1 font-semibold">
+                    <small>********</small>
+                    <small className="flex items-center gap-2">
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Copy className="cursor-pointer" size={13} />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Copy</p>
+                        </TooltipContent>
+                      </Tooltip>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Eye className="cursor-pointer" size={13} />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Show</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </small>
+                  </span>
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+          <SidebarGroup>
+            <SidebarGroupContent>
+              <SidebarMenu className="flex justify-center">
+                <SidebarMenuItem className="flex justify-center">
+                  <Dialog>
+                    <form>
+                      <DialogTrigger asChild>
+                        <Button variant="ghost" className="p-1 px-2">
+                          <Pencil />
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-[425px]">
+                        <DialogHeader>
+                          <DialogTitle>Edit profile</DialogTitle>
+                          <DialogDescription>
+                            Make changes to your profile here. Click save when
+                            you&apos;re done.
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="grid gap-4">
+                          <div className="grid gap-3">
+                            <Label htmlFor="name-1">Name</Label>
+                            <Input
+                              id="name-1"
+                              name="name"
+                              defaultValue="Pedro Duarte"
+                            />
+                          </div>
+                          <div className="grid gap-3">
+                            <Label htmlFor="username-1">Username</Label>
+                            <Input
+                              id="username-1"
+                              name="username"
+                              defaultValue="@peduarte"
+                            />
+                          </div>
+                        </div>
+                        <DialogFooter>
+                          <DialogClose asChild>
+                            <Button variant="outline">Cancel</Button>
+                          </DialogClose>
+                          <Button type="submit">Save changes</Button>
+                        </DialogFooter>
+                      </DialogContent>
+                    </form>
+                  </Dialog>
+                  <Dialog>
+                    <form>
+                      <DialogTrigger asChild>
+                        <Button variant="ghost" className="p-1 px-2">
+                          <Mail className="text-blue-700" />
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-[425px]">
+                        <DialogHeader>
+                          <DialogTitle>Edit profile</DialogTitle>
+                          <DialogDescription>
+                            Make changes to your profile here. Click save when
+                            you&apos;re done.
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="grid gap-4">
+                          <div className="grid gap-3">
+                            <Label htmlFor="name-1">Name</Label>
+                            <Input
+                              id="name-1"
+                              name="name"
+                              defaultValue="Pedro Duarte"
+                            />
+                          </div>
+                          <div className="grid gap-3">
+                            <Label htmlFor="username-1">Username</Label>
+                            <Input
+                              id="username-1"
+                              name="username"
+                              defaultValue="@peduarte"
+                            />
+                          </div>
+                        </div>
+                        <DialogFooter>
+                          <DialogClose asChild>
+                            <Button variant="outline">Cancel</Button>
+                          </DialogClose>
+                          <Button type="submit">Save changes</Button>
+                        </DialogFooter>
+                      </DialogContent>
+                    </form>
+                  </Dialog>
+                  <Link href={"/dashbourd/setting"}>
+                    <Button variant="ghost" className="p-1 px-2">
+                      <Bolt />
+                    </Button>
+                  </Link>
+                  <Link href={"/matches"}>
+                    <Button variant="ghost" className="p-1 px-2">
+                      <Brain />
+                    </Button>
+                  </Link>
+                </SidebarMenuItem>
+                <SidebarMenuItem className="flex justify-center">
+                  <Button
+                    variant={"outline"}
+                    className="w-full py-0 p-0 text-red-600 border-red-600"
+                  >
+                    Logout
+                  </Button>
                 </SidebarMenuItem>
               </SidebarMenu>
             </SidebarGroupContent>

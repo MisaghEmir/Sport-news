@@ -24,12 +24,25 @@ export default function MatchSingle({ match }: { match: Match }) {
             </div>
           </div>
           <div className="text-center gap-0 flex flex-col justify-center">
-            <small className="text-xs  mb-0">20/09/2024</small>
-            <p className=" mt-0 p-0 text-xl font-bold ml-[10px]">
-              20:30
-              <small className="text-xs">Sun</small>
-            </p>
-            <small className="text-xs  mb-0">Laliga</small>
+            {match.end ? (
+              <>
+                <small className="text-center text-red-800 font-bold">Live</small>
+                <p  className="flex gap-3 mt-0 p-0 text-xl font-bold ml-[0px]">
+                  <b>{match.goalsA}</b>
+                  <b>-</b>
+                  <b>{match.goalsB}</b>
+                </p>
+              </>
+            ) : (
+              <>
+                <small className="text-xs  mb-0">20/09/2024</small>
+                <p className=" mt-0 p-0 text-xl font-bold ml-[10px]">
+                  20:30
+                  <small className="text-xs">Sun</small>
+                </p>
+              </>
+            )}
+            <small className="text-xs text-center mb-0">Laliga</small>
           </div>
           <div className=" relative p-5 py-3 flex justify-end items-center">
             <div className=" w-20 h-20 z-10">

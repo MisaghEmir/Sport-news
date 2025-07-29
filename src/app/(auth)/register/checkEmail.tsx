@@ -66,11 +66,11 @@ const EmailContainer = ({
       <div className="mt-[4vh]">
         <div className="mt-4">
           <p className="text-xs text-color_text_13 dark:text-color_text_26">Email address</p>
-          <Input className="mt-1 text-color_text_13 dark:text-color_text_26 h-8" type="email" placeholder="Email" />
+          <Input readOnly className="mt-1 text-color_text_13 dark:text-color_text_26 h-8" type="email" placeholder="Email" />
         </div>
         <div className="mt-4">
           <p className="text-xs text-color_text_13 dark:text-color_text_26">Password</p>
-          <Input className="mt-1 text-color_text_13 dark:text-color_text_26 h-8" type="password" placeholder="Password" />
+          <Input readOnly className="mt-1 text-color_text_13 dark:text-color_text_26 h-8" type="password" placeholder="Password" />
         </div>
         <div className="flex justify-end mt-[4vh]">
           <Button

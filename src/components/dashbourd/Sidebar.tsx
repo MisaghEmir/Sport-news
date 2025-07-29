@@ -16,7 +16,7 @@ import {
   Inbox,
   Search,
   Settings,
-  ArrowLeftFromLine,
+  Wallet,
   CalendarIcon,
 } from "lucide-react";
 import {
@@ -31,22 +31,28 @@ import {
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
 
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: "/dashbourd",
     icon: Home,
   },
   {
-    title: "Inbox",
+    title: "Bet",
     url: "#",
     icon: Inbox,
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Inbox,
+    title: "Wallet",
+    url: "/dashbourd/wallet",
+    icon: Wallet,
+  },
+  {
+    title: "Your Games",
+    url: "/dashbourd/games",
+    icon: Wallet,
   },
   {
     title: "Search",
@@ -55,7 +61,7 @@ const items = [
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/dashbourd/setting",
     icon: Settings,
   },
 ];
@@ -85,7 +91,7 @@ export default function SidebarDashbourd() {
   }
   return (
     <div>
-      <Sidebar collapsible="icon" className="h-6/7 top-14 mt-0 py-4">
+      <Sidebar collapsible="icon" className="h-6/7 top-14 mt-0 py-4" >
         <SidebarContent>
           <SidebarGroup>
             <div className="flex justify-between items-center pr-1">
@@ -97,7 +103,7 @@ export default function SidebarDashbourd() {
                 {items.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild>
-                      <a href={item.url}>
+                      <Link href={item.url}>
                         {open ? (
                           <item.icon />
                         ) : (
@@ -111,7 +117,7 @@ export default function SidebarDashbourd() {
                           </Tooltip>
                         )}
                         <span>{item.title}</span>
-                      </a>
+                      </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}

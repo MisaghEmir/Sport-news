@@ -35,6 +35,7 @@ const PasswordContainer = ({
           <div className="flex-1">
             <p className="text-xs">First name</p>
             <Input
+            readOnly
               className="mt-1 focus:border-blue-300 outline-blue-700 h-8"
               type="text"
               placeholder=""
@@ -43,6 +44,7 @@ const PasswordContainer = ({
           <div className="flex-1">
             <p className="text-xs">Last name</p>
             <Input
+            readOnly
               className="mt-1 focus:border-blue-300 outline-blue-700  h-8"
               type="text"
               placeholder=""
@@ -56,6 +58,7 @@ const PasswordContainer = ({
           <div className="flex-1">
             <p className="text-xs">Month</p>
             <Input
+            readOnly
               className="mt-1 focus:border-blue-300 outline-blue-700 h-8"
               type="text"
               placeholder=""
@@ -64,6 +67,7 @@ const PasswordContainer = ({
           <div className="flex-1">
             <p className="text-xs">Year</p>
             <Input
+            readOnly
               className="mt-1 focus:border-blue-300 outline-blue-700  h-8"
               type="text"
               placeholder=""

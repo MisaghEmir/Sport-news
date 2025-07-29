@@ -9,6 +9,7 @@ import Loading from "@/config/Loading";
 import ProviderRedux from "@/redux/Provider";
 import ScrollHandle from "@/redux/ScrollHandle";
 import { LoginProvider } from "@/context/LoginContext";
+import { CookiesProvider } from "next-client-cookies/server";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,15 +34,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} pb-28`}>
-        <ProviderRedux>
-          <LoginProvider>
-            <ThemeProvider>
-              <ScrollHandle />
-              <Suspense fallback={<Loading />}>{children}</Suspense>
-              <Theme />
-            </ThemeProvider>
-          </LoginProvider>
-        </ProviderRedux>
+        <CookiesProvider>
+          <ProviderRedux>
+            <LoginProvider>
+              <ThemeProvider>
+                <ScrollHandle />
+                <Suspense fallback={<Loading />}>{children}</Suspense>
+                <Theme />
+              </ThemeProvider>
+            </LoginProvider>
+          </ProviderRedux>
+        </CookiesProvider>
       </body>
     </html>
   );

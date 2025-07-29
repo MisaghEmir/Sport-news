@@ -116,6 +116,7 @@ export default function FilterSidebar() {
                     <div className="relative flex gap-2">
                       <Input
                         id="date"
+                        readOnly
                         value={formatDate(date)}
                         placeholder="Tomorrow or next week"
                         className="bg-background pr-10 text-sm font-semibold"

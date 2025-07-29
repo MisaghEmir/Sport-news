@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { use } from "react";
 import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
 import Link from "next/link";
 import {
@@ -20,14 +20,16 @@ import { FaMoon } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { useThemeMode } from "@/context/ThemeMode";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useLoginMode } from "@/context/LoginContext";
 
 const LoginHeader = () => {
   const { ThemeMode } = useThemeMode();
+  const { LoginMode } = useLoginMode();
   return (
     <div>
-      <NavigationMenu className="items-center" >
+      <NavigationMenu className="items-center">
         <NavigationMenuList className="gap-4 mr-4">
-          <NavigationMenuItem >
+          <NavigationMenuItem>
             <Link href={"/search"} className="dark:text-color_text_30">
               <IoSearchOutline />
             </Link>
@@ -58,7 +60,7 @@ const LoginHeader = () => {
                 <IoNotificationsSharp />
               </li>
             </NavigationMenuTrigger>
-               <NavigationMenuContent className="">
+            <NavigationMenuContent className="">
               <ul className="grid col-span-1 gap-0 py-2 px-2 md:w-[400px] lg:w-[300px] ">
                 <ListItem
                   href="/docs"
@@ -79,7 +81,6 @@ const LoginHeader = () => {
           </NavigationMenuItem>
           <NavigationMenuItem className={` bg-transparent`}>
             <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">
-              <Link href="/football/matches">
                 <Avatar className="m-0">
                   <AvatarImage
                     src="https://github.com/shadcn.png"
@@ -87,13 +88,12 @@ const LoginHeader = () => {
                   />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
-              </Link>
             </NavigationMenuTrigger>
             <NavigationMenuContent className="">
               <ul className="grid col-span-1 gap-0 py-2 px-2 md:w-[400px] lg:w-[300px] ">
                 <ListItem
-                  href="/docs"
-                  title="Laliga"
+                  href="/dashbourd"
+                  title="Dashbourd"
                   className="hover:bg-color_bg_29  dark:hover:bg-color_bg_10 p-3"
                 >
                   Re-usable components built using Radix UI and Tailwind CSS.
@@ -105,6 +105,13 @@ const LoginHeader = () => {
                 >
                   Re-usable components built using Radix UI and Tailwind CSS.
                 </ListItem>
+                <ListItem
+                  onClick={LoginMode.toggleLoginMode}
+                  href="/"
+                  title="
+                  Logout"
+                  className="hover:bg-red-50  dark:hover:bg-red-50 text-red-800 p-3"
+                ></ListItem>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>

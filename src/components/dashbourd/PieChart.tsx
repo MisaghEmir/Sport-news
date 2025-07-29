@@ -57,7 +57,7 @@ export function ChartRadialStacked() {
             <ChartTooltip
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
-              wrapperStyle={{ outline: "none",backgroundColor: "red" }}
+              wrapperStyle={{ outline: "none",backgroundColor: "transparent" }}
             />
             <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
               <Label
